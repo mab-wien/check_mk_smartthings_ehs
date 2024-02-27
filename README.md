@@ -32,3 +32,7 @@ See https://account.smartthings.com/tokens
 ### getDeviceId
 
 See https://developer.smartthings.com/docs/api/public/#tag/Devices/operation/getDevices
+
+### Simple Demo
+![image](demo.jpg)
+
