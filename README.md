@@ -34,18 +34,23 @@ See https://account.smartthings.com/tokens
 See https://developer.smartthings.com/docs/api/public/#tag/Devices/operation/getDevices
 
 ### Simple Demo
+
 RAW Edition
 
 ## v1.x
-![image](demo.jpg)
+
+![image](demo/check_mk/v1.jpg)
 
 ## v2.x
-![image](demo2.jpg)
+
+![image](demo/check_mk/v2.jpg)
 
 ### Note
 
 #### Tested on checkmk/check-mk-raw:latest
+
 _Example_
+
 ```
 version: '3.3'
 services:
@@ -63,3 +68,9 @@ services:
     restart: always
     image: checkmk/check-mk-raw:latest
 ```
+
+#### Demo API-Req. via Postman
+
+_getDevicesStatus_
+
+![image](demo/postman/getDevicesStatus.jpg)
