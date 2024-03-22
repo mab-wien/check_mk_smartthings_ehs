@@ -33,7 +33,12 @@ if [ "$deviceId" == "" ]; then
     # shellcheck disable=SC1090
     . $configFile
   else
-    fail 2 "USAGE: $0 \$bearerToken \$deviceId or use configFile $configFile"
+    if test -f ~/"$configFile"; then
+      # shellcheck disable=SC1090
+      . ~/"$configFile"
+    else
+      fail 2 "USAGE: $0 \$bearerToken \$deviceId or use configFile $configFile"
+    fi
   fi
 fi
 
