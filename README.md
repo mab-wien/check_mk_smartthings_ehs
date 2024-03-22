@@ -41,3 +41,25 @@ RAW Edition
 
 ## v2.x
 ![image](demo2.jpg)
+
+### Note
+
+#### Tested on checkmk/check-mk-raw:latest
+_Example_
+```
+version: '3.3'
+services:
+  check-mk-raw:
+    ports:
+      - 8722:5000
+    tmpfs: /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
+    volumes:
+      - /volume1/docker/checkmk/sites:/omd/sites
+      - /volume1/docker/checkmk/check_mk_agent:/usr/lib/check_mk_agent:ro
+      - /volume1/docker/checkmk/smartthings.conf:/etc/smartthings.conf:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    container_name: checkmk
+    restart: always
+    image: checkmk/check-mk-raw:latest
+```
