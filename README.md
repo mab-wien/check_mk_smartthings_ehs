@@ -34,5 +34,10 @@ See https://account.smartthings.com/tokens
 See https://developer.smartthings.com/docs/api/public/#tag/Devices/operation/getDevices
 
 ### Simple Demo
+RAW Edition
+
+## v1.x
 ![image](demo.jpg)
 
+## v2.x
+![image](demo2.jpg)
