@@ -4,6 +4,7 @@ platformUrl="https://api.smartthings.com/v1"
 bearerToken="$1"
 deviceId="$2"
 name="smartthings_ehs"
+homeDir=~
 configFile=/etc/smartthings.conf
 labels=(power powerEnergy energy deltaEnergy waterTemp waterTempSet heatingTemp HeatingTempSet)
 
@@ -33,11 +34,11 @@ if [ "$deviceId" == "" ]; then
     # shellcheck disable=SC1090
     . $configFile
   else
-    if test -f ~/"$configFile"; then
+    if test -f "$homeDir$configFile"; then
       # shellcheck disable=SC1090
-      . ~/"$configFile"
+      . "$homeDir$configFile"
     else
-      fail 2 "USAGE: $0 \$bearerToken \$deviceId or use configFile $configFile"
+      fail 2 "USAGE: $0 \$bearerToken \$deviceId or use configFile $configFile or $homeDir$configFile"
     fi
   fi
 fi
